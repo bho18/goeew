@@ -1,19 +1,16 @@
-package main 
+package main
 
-import ("goEEW/mmi"
-		"fmt"
+import (
+	"fmt"
+	"goEEW/mmi"
 )
-
-
 
 func main() {
 	m := 6.9
 	d := 200.0
 
-	go fmt.Println("Equation 1: ", mmi.GetIntensity(m, d))
-	go fmt.Println("Equation 2: ", mmi.GetIntensity2(m, d))
-	go fmt.Println("Equation 3: ", mmi.GetIntensity3(m, d))
-
-	var i string
-	fmt.Scanln(&i)
+	fmt.Println("Bakun-Wentworth (1997):", mmi.BakunWentworth97(m, d))
+	fmt.Println("Atkinson-Wald (2007):", mmi.AtkinsonWald07(m, d))
+	fmt.Println("Allen-Wald (2012):", mmi.AllenWald12(m, d))
+	fmt.Println("Best Estimate:", mmi.BestEstimate(m, d))
 }
