@@ -87,11 +87,11 @@ func AllenWald12(M, R float64) float64 {
 // directly.
 func BestEstimate(M, R float64) float64 {
 	switch {
+	case R > 20 && R < 30:
+		return AllenWald12(M, R)
 	case R <= 20:
 		return AtkinsonWald07(M, R)
-	case R >= 30:
-		return BakunWentworth97(M, R)
 	default:
-		return AllenWald12(M, R)
+		return BakunWentworth97(M, R)
 	}
 }
