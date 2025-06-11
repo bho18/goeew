@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goEEW/mmi"
+	"goeew/mmi"
 )
 
 func main() {
